@@ -277,7 +277,50 @@ class Tobenski_Catering_Admin {
             'active' => true,
             'description' => '',
             )
-        );
+		);
+		
+		acf_add_local_field_group(array(
+            'key' => 'group_tob_6o3brta8sv',
+            'title' => 'sticky',
+            'fields' => array(
+                array(
+                    'key' => 'field_tob_x3b0xzx52d',
+                    'label' => 'sticky',
+                    'name' => 'sticky',
+                    'type' => 'true_false',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 1,
+                    'ui_on_text' => 'Sticky',
+                    'ui_off_text' => 'Not Sticky',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'catering',
+                    ),
+                ),
+            ),
+            'menu_order' => 5,
+            'position' => 'side',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
 	}
 
 	/**	
