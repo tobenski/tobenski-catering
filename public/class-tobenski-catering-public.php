@@ -73,6 +73,12 @@ class Tobenski_Catering_Public {
 	 * @return string [Template location]
 	 */
 	public function page_templates( $template ) {
+		// If not catering Bail early
+		if (!is_page('catering') && !is_singular( 'catering' )) : return $template; endif;
+
+		// Load Stylesheet for the page 
+		$this->enqueue_styles();
+		
 		if (is_page('catering')) :
 			// has slug catering
 			return plugin_dir_path( __FILE__ ) . 'partials/page-catering.php';
@@ -84,9 +90,6 @@ class Tobenski_Catering_Public {
 				return plugin_dir_path( __FILE__ ) . 'partials/parent-catering.php';
 			endif;
 			return plugin_dir_path( __FILE__ ) . 'partials/single-catering.php';
-		else :
-			// is not catering
-			return $template;
 		endif;
 	} 
 
