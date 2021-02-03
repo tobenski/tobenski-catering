@@ -17,7 +17,7 @@ Template Post Type: catering
 ?>
     <?php get_template_part( '/partials/catering/navigation' ); ?>
 
-    <section class="flex max-w-full pt-12 pb-16 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl overflow-x-hidden sm:overflow-x-auto">
+    <section class="flex max-w-full pb-12 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl overflow-x-hidden sm:overflow-x-auto">
         <div class="card card-parent">
             <div class="card-image">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" />
@@ -78,7 +78,7 @@ Template Post Type: catering
         wp_reset_postdata();
     ?>
     
-    <section class="hidden md:flex flex-col max-w-full pt-12 pb-16 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
+    <section class="hidden md:flex flex-col max-w-full pb-12 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
         <?php  
         $args = array(
             'posts_per_page' => -1,

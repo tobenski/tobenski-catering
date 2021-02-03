@@ -1,11 +1,10 @@
 <?php 
     get_header(); 
-    get_template_part( 'partials/streamers/1-1-cta' );    
 ?>
 
-    <section id="content" class="flex flex-col w-full max-w-full p-2 md:p-0 pt-12 pb-16 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
+    <section id="content" class="flex flex-col w-screen max-w-full p-0 pb-12 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
         <h2 class="mb-6 text-xl font-semibold leading-none uppercase sm:text-2xl md:text-3xl lg:text-6xl font-amiri w-full text-center mt-6"><?php the_title(); ?><h2>
-        <p class=""><?php the_content(); ?></p>
+        <div class="px-4"><?php the_content(); ?></div>
         <?php
         $args = array(
             'post_type' => 'catering',
@@ -20,7 +19,7 @@
         <div class="flex w-full shadow-sm mt-12"
             x-data="{swiper: null}"
             x-init="swiper = new Swiper($refs.container, {
-                loop: true,
+                loop: false,
                 slidesPerView: 1,
                 spaceBetween: 0,
                 breakpoints: {
@@ -30,12 +29,12 @@
                     loop: false,
                     },
                     1025: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                     spaceBetween: 0,
                     loop: false,
                     },
                     1281: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                     spaceBetween: 0,
                     loop: false,
                     },
@@ -46,22 +45,16 @@
                 },
             })
             ">
-            <div class="hidden md:flex flex-col items-center justify-start w-1/4">
-                <h3 class="w-full mb-2 font-mono font-semibold leading-tight tracking-tight uppercase sm:text-lg md:text-xl lg:text-3xl">Mad Ud af huset</h3>
-                <div class="flex justify-start w-full">
-                    <i id="prev" x-ref="prev" class="p-3 mx-4 text-4xl bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-left focus:outline-none"></i>
-                    <i id="next" x-ref="next" class="p-3 mx-4 text-4xl bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-right focus:outline-none"></i>
-                </div>
-            </div>
-            <div class="w-full md:w-3/4 swiper-container" x-ref="container">
-                <i x-on:click="swiper.slidePrev()" class="absolute z-10 top-1/3 -left-2 md:hidden p-3 mx-4 text-4xl bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-left focus:outline-none"></i>
+
+            <div class="w-full swiper-container" x-ref="container">
+                <i id="prev" class="absolute z-10 top-1/3 left-0 -ml-2 p-3 mx-4 text-4xl opacity-75 hover:opacity-100 bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-left focus:outline-none"></i>
                 <div class="w-full swiper-wrapper">
                     <?php
                         while($parent_query->have_posts()) {
                             $parent_query->the_post();
                     ?>
                     <!-- The Slide -->
-                    <div class="flex flex-col px-4 swiper-slide">
+                    <div class="flex flex-col swiper-slide">
                         <a href="<?php the_permalink() ?>">
                             <div class="w-full px-4 mt-4 mb-6 h-60 card-small">          
                                 <img src="<?php the_post_thumbnail_url(); ?>" 
@@ -83,7 +76,7 @@
                     <!-- end slide -->
                     <?php } ?>                    
                 </div>
-                <i x-on:click="swiper.slideNext()" class="absolute z-10 top-1/3 -right-2 md:hidden p-3 mx-4 text-4xl bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-right focus:outline-none"></i>
+                <i id="next" class="absolute z-10 top-1/3 right-0 -mr-2 p-3 mx-4 text-4xl opacity-75 hover:opacity-100 bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-right focus:outline-none"></i>
             </div>
         </div>
         <?php
@@ -115,17 +108,5 @@
         }
         wp_reset_postdata();
     ?>
-
-</main>
-
-<script>
-    var hand = document.getElementById('hand');
-    var content = document.getElementById('content');
-    hand.addEventListener('click', () => {
-        content.scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-</script> 
 
 <?php get_footer(); ?>

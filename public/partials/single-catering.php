@@ -13,7 +13,7 @@ $query = new WP_Query(array(
     get_template_part( '/partials/catering/navigation' ); 
 ?>
     
-    <section class="flex w-full max-w-full pt-12 pb-16 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
+    <section class="flex w-full max-w-full pb-12 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
         <div class="card card-parent">
             <div class="card-image">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" />
@@ -48,10 +48,10 @@ $query = new WP_Query(array(
         </div>
     </section>
 
-    <section class="flex w-full max-w-full pt-12 pb-16 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
+    <section class="flex w-full max-w-full pb-12 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl overflow-x-hidden">
         <div class="card card-parent card-mirror">
             <div class="card-image">
-                <img src="<?php echo get_field('event_secondary_image'); ?>" />
+                <img src="<?php the_field('catering_secondary_image'); ?>" />
             </div>
             <div class="card-content">                
                 <div class="card-header">
@@ -74,7 +74,7 @@ $query = new WP_Query(array(
         </div>
     </section>
 
-    <section id="content" class="hidden md:flex flex-col w-full max-w-full pt-12 pb-16 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
+    <section id="content" class="hidden md:flex flex-col w-full max-w-full pb-12 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
         <?php  
         $args = array(
             'posts_per_page'    => -1,
