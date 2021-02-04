@@ -40,15 +40,15 @@ Template Post Type: catering
                 <div class="flex items-start justify-between mb-6">
                     <div class="flex flex-col items-center w-1/3">
                         <i class="fas fa-users md:text-3xl "></i>
-                        <h6 class="card-header-small">Minimum <?php echo get_post_meta(get_the_ID(), 'kuverter', true); ?> personer.</h6>
+                        <h6 class="card-header-small">Minimum <?php the_field('kuverter'); ?> personer.</h6>
                     </div>
                     <div class="flex flex-col items-center w-1/3">
                         <i class="fas fa-check-double md:text-3xl"></i>
-                        <h6 class="card-header-small"><?php echo get_post_meta( get_the_ID(), 'short_description', true ); ?></h6>
+                        <h6 class="card-header-small"><?php the_field('short_description'); ?></h6>
                     </div>
                     <div class="flex flex-col items-center w-1/3">
                         <i class="fas fa-calendar md:text-3xl"></i>
-                        <h6 class="card-header-small">Bestil minimum <?php echo get_post_meta(get_the_ID(), 'min_order_time', true); ?> dage i forvejen</h6>
+                        <h6 class="card-header-small">Bestil minimum <?php the_field('min_order_time'); ?> dage i forvejen</h6>
                     </div>
                 </div>
             </div>
