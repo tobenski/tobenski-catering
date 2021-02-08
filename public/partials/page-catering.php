@@ -8,10 +8,10 @@
         <div class="card card-full">
             <div class="card-image">            
                 <img src="<?php the_post_thumbnail_url(  ) ;?>">
-            </div>                
+            </div>
             <div class="card-content">
                 <div class="card-header">
-                    <h4 class="text-center"><?php the_title(); ?></h4>
+                <h2 class="text-center text-xl md:text-3xl"><?php the_title(); ?></h2>
                 </div>
                 <p><?php the_content(); ?></p>
             </div>            
