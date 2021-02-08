@@ -2,9 +2,22 @@
     get_header(); 
 ?>
 
+
+    <section class="flex flex-wrap w-full max-w-full pt-12 pb-6 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
+        <!-- MENU CARD-->
+        <div class="card card-full">
+            <div class="card-image">            
+                <img src="<?php the_post_thumbnail_url(  ) ;?>">
+            </div>                
+            <div class="card-content">
+                <div class="card-header">
+                    <h4 class="text-center"><?php the_title(); ?></h4>
+                </div>
+                <p><?php the_content(); ?></p>
+            </div>            
+        </div>
+    </section>
     <section id="content" class="flex flex-col w-screen max-w-full p-0 pb-12 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
-        <h2 class="mb-6 text-xl font-semibold leading-none uppercase sm:text-2xl md:text-3xl lg:text-6xl font-amiri w-full text-center mt-6"><?php the_title(); ?><h2>
-        <div class="px-4"><?php the_content(); ?></div>
         <?php
         $args = array(
             'post_type' => 'catering',
@@ -29,12 +42,12 @@
                     loop: false,
                     },
                     1025: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 0,
                     loop: false,
                     },
                     1281: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     spaceBetween: 0,
                     loop: false,
                     },
