@@ -60,7 +60,7 @@
             ">
 
             <div class="w-full swiper-container" x-ref="container">
-                <i id="prev" class="absolute z-10 top-1/3 left-0 -ml-2 p-3 mx-4 text-4xl opacity-75 hover:opacity-100 bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-left focus:outline-none"></i>
+                <i id="prev" class="absolute z-10 top-1/3 left-0 -ml-2 p-3 mx-4 text-2xl md:text-4xl opacity-75 hover:opacity-100 bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-left focus:outline-none"></i>
                 <div class="w-full swiper-wrapper">
                     <?php
                         while($parent_query->have_posts()) {
@@ -89,7 +89,7 @@
                     <!-- end slide -->
                     <?php } ?>                    
                 </div>
-                <i id="next" class="absolute z-10 top-1/3 right-0 -mr-2 p-3 mx-4 text-4xl opacity-75 hover:opacity-100 bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-right focus:outline-none"></i>
+                <i id="next" class="absolute z-10 top-1/3 right-0 -mr-2 p-3 mx-4 text-2xl md:text-4xl opacity-75 hover:opacity-100 bg-secondary rounded-full cursor-pointer hover:text-white hover:bg-secondary-hover fa fa-arrow-right focus:outline-none"></i>
             </div>
         </div>
         <?php
