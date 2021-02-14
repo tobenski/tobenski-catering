@@ -1,6 +1,6 @@
 <?php 
     get_header();
-    php get_template_part( '/partials/catering/navigation' );
+    get_template_part( '/partials/catering/navigation' );
 ?>
 
 
