@@ -36,8 +36,8 @@ $query = new WP_Query(array(
                         <h6 class="card-header-small">Minimum <?php the_field('kuverter'); ?> personer.</h6>
                     </div>
                     <div class="flex flex-col items-center w-1/3">
-                        <i class="fas fa-check-double fa-2x fa-fw"></i>
-                        <h6 class="card-header-small"><?php the_field('short_description'); ?></h6>
+                        <i class="fas fa-wallet fa-2x fa-fw"></i>
+                        <h6 class="card-header-small">Pris: <?php the_field('pris'); ?>,-</h6>
                     </div>
                     <div class="flex flex-col items-center w-1/3">
                         <i class="fas fa-calendar fa-2x fa-fw"></i>
